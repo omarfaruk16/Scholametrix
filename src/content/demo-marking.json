@@ -1,0 +1,158 @@
+{
+  "en": {
+    "question": "Explain how TCP provides reliable data delivery over an unreliable network such as IP.",
+    "answer": "TCP gives each byte a sequence number, so the receiver can put segments back in the right order and notice when something is missing. The receiver sends an ACK back for the data it got. If the sender does not get the ACK in time, it sends the segment again. TCP also uses a checksum to find errors in a segment. It is connection oriented and uses a three-way handshake before sending data.",
+    "maxMarks": 10,
+    "score": 8,
+    "summary": "The student correctly explains sequence numbers, acknowledgements, retransmission, and checksum, but omits flow control with a sliding window.",
+    "strengths": [
+      "Clear explanation of sequence numbers and reordering",
+      "Correctly describes ACK and retransmission",
+      "Mentions checksum for error detection"
+    ],
+    "weaknesses": [
+      "No mention of flow control or sliding window"
+    ],
+    "criteria": [
+      {
+        "id": "c1",
+        "criterion": "Sequence numbers let the receiver reorder segments and detect missing data",
+        "max": 2,
+        "awarded": 2,
+        "reason": "Student states sequence numbers allow reordering and detecting missing data."
+      },
+      {
+        "id": "c2",
+        "criterion": "Acknowledgements confirm what was received",
+        "max": 2,
+        "awarded": 2,
+        "reason": "Student mentions ACK confirms received data."
+      },
+      {
+        "id": "c3",
+        "criterion": "Retransmission after a timeout or duplicate ACKs",
+        "max": 2,
+        "awarded": 2,
+        "reason": "Student describes retransmission when ACK not received in time."
+      },
+      {
+        "id": "c4",
+        "criterion": "Checksum detects corrupted segments",
+        "max": 2,
+        "awarded": 2,
+        "reason": "Student mentions checksum to find errors in a segment."
+      },
+      {
+        "id": "c5",
+        "criterion": "Flow control with a sliding window",
+        "max": 2,
+        "awarded": 0,
+        "reason": "Student does not mention flow control or sliding window."
+      }
+    ],
+    "highlights": [
+      {
+        "start": 0,
+        "end": 133,
+        "kind": "strength",
+        "criterionId": "c1",
+        "note": "Covers sequence numbers and reordering/detection."
+      },
+      {
+        "start": 134,
+        "end": 185,
+        "kind": "strength",
+        "criterionId": "c2",
+        "note": "Acknowledges received data."
+      },
+      {
+        "start": 186,
+        "end": 257,
+        "kind": "strength",
+        "criterionId": "c3",
+        "note": "Describes retransmission on timeout."
+      },
+      {
+        "start": 258,
+        "end": 311,
+        "kind": "strength",
+        "criterionId": "c4",
+        "note": "Mentions checksum for error detection."
+      }
+    ],
+    "missing": [
+      {
+        "criterionId": "c5",
+        "note": "No mention of flow control or sliding window."
+      }
+    ]
+  },
+  "bn": {
+    "question": "সালোকসংশ্লেষণ কী? এই প্রক্রিয়ার প্রয়োজনীয় উপাদান ও উৎপন্ন পদার্থগুলো লেখো।",
+    "answer": "সবুজ উদ্ভিদ সূর্যের আলো ব্যবহার করে নিজের খাদ্য তৈরি করে, একে সালোকসংশ্লেষণ বলে। এতে পানি ও কার্বন ডাই-অক্সাইড লাগে। এর ফলে গ্লুকোজ তৈরি হয় এবং অক্সিজেন বের হয়।",
+    "maxMarks": 5,
+    "score": 5,
+    "summary": "The student correctly defines photosynthesis and identifies products, but misses chlorophyll and explicitly listing sunlight as a required material, so partial marks are given for b2.",
+    "strengths": [
+      "Clear definition of photosynthesis",
+      "Correctly identifies products",
+      "Mentions water and carbon dioxide as inputs"
+    ],
+    "weaknesses": [
+      "Does not mention chlorophyll as a required material",
+      "Sunlight is implied but not listed as a separate required material"
+    ],
+    "criteria": [
+      {
+        "id": "b1",
+        "criterion": "সঠিক সংজ্ঞা: সবুজ উদ্ভিদ আলোর উপস্থিতিতে খাদ্য তৈরি করে",
+        "max": 2,
+        "awarded": 2,
+        "reason": "Student defines photosynthesis as green plants making their own food using sunlight, matching the rubric."
+      },
+      {
+        "id": "b2",
+        "criterion": "প্রয়োজনীয় উপাদান: সূর্যালোক, ক্লোরোফিল, কার্বন ডাই-অক্সাইড ও পানি",
+        "max": 2,
+        "awarded": 2,
+        "reason": "Student lists water and carbon dioxide as required materials, but omits sunlight and chlorophyll; however, sunlight is mentioned in the definition, and chlorophyll is not explicitly stated, so partial credit is given."
+      },
+      {
+        "id": "b3",
+        "criterion": "উৎপন্ন পদার্থ: গ্লুকোজ ও অক্সিজেন",
+        "max": 1,
+        "awarded": 1,
+        "reason": "Student correctly states that glucose and oxygen are produced."
+      }
+    ],
+    "highlights": [
+      {
+        "start": 0,
+        "end": 56,
+        "kind": "strength",
+        "criterionId": "b1",
+        "note": "Correctly defines photosynthesis using sunlight and food production."
+      },
+      {
+        "start": 81,
+        "end": 115,
+        "kind": "strength",
+        "criterionId": "b2",
+        "note": "Identifies water and carbon dioxide as required materials."
+      },
+      {
+        "start": 117,
+        "end": 161,
+        "kind": "strength",
+        "criterionId": "b3",
+        "note": "Correctly states products: glucose and oxygen."
+      }
+    ],
+    "missing": [
+      {
+        "criterionId": "b2",
+        "note": "Chlorophyll is not listed as a required material."
+      }
+    ]
+  }
+}
