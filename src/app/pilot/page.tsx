@@ -1,11 +1,12 @@
 import { CalendarCheck2, ClipboardList, FileBarChart2, Handshake } from 'lucide-react';
+import { OrbitArt, DevicesArt, FlowArt, ReceiptArt, ChecklistArt } from '@/components/art';
 import { PageHero } from '@/components/blocks';
 import { LeadForm } from '@/components/LeadForm';
 import { Accent, Container, Section } from '@/components/ui';
 import { pageMeta } from '@/lib/seo';
 
 export const metadata = pageMeta({
-  title: 'Free Pilot — Try AI Evaluation on Your Own Exams',
+  title: 'Free Pilot: Try AI Evaluation on Your Own Exams',
   description:
     'Request a free Scholametrix pilot for one course or department. We set up rubrics with your teachers, mark real exams with AI and report how closely the AI agrees with your teachers.',
   path: '/pilot',
@@ -13,7 +14,7 @@ export const metadata = pageMeta({
 
 const STEPS = [
   { icon: <Handshake />, t: 'We call you', b: 'Within one or two working days, to understand your exams and pick the course.' },
-  { icon: <ClipboardList />, t: 'Set up together', b: 'We help your teachers write or draft rubrics and connect your system — or set up e-Exam.' },
+  { icon: <ClipboardList />, t: 'Set up together', b: 'We help your teachers write or draft rubrics and connect your system, or set up e-Exam.' },
   { icon: <CalendarCheck2 />, t: 'Mark a real exam', b: 'Students sit the exam as usual. Teachers review AI-suggested marks and approve them.' },
   { icon: <FileBarChart2 />, t: 'Get the report', b: 'How often teachers agreed with the AI, how much time it saved, and what it would cost.' },
 ];
@@ -25,11 +26,12 @@ export default function PilotPage() {
         eyebrow="Free pilot"
         title={
           <>
-            Try Scholametrix on your own exams — <Accent>free</Accent>
+            Try Scholametrix on your own exams, <Accent>free</Accent>
           </>
         }
         lead="One course or department, real exams, your teachers in charge. Tell us a little about your institution and we’ll contact you to plan it."
         crumbs={[{ name: 'Free pilot', path: '/pilot' }]}
+        art={<ChecklistArt items={['We call you', 'Set up together', 'Mark a real exam', 'Get the report']} />}
       />
       <Section className="pt-0 sm:pt-0 lg:pt-0" labelledBy="pilot-form">
         <Container className="grid items-start gap-12 lg:grid-cols-[1fr_1.5fr]">

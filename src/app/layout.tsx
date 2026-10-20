@@ -3,6 +3,7 @@ import { Inter, Instrument_Serif, Noto_Sans_Bengali, Plus_Jakarta_Sans } from 'n
 import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { JsonLd } from '@/components/JsonLd';
+import { ScrollProgress } from '@/components/fx';
 import { MotionProvider } from '@/components/MotionProvider';
 import { SITE } from '@/content/site';
 import { orgLd, websiteLd } from '@/lib/seo';
@@ -16,7 +17,7 @@ const bangla = Noto_Sans_Bengali({ subsets: ['bengali'], variable: '--font-bangl
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: 'Scholametrix — AI Evaluation for Written Exams | Fair, Fast, Teacher-Approved',
+    default: 'Scholametrix: AI Evaluation for Written Exams | Fair, Fast, Teacher-Approved',
     template: '%s | Scholametrix',
   },
   description: SITE.description,
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <JsonLd data={[orgLd, websiteLd]} />
         <MotionProvider>
+          <ScrollProgress />
           <Header />
           <main id="main">{children}</main>
           <Footer />

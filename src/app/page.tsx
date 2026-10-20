@@ -39,24 +39,26 @@ import { Accent, ButtonLink, Card, Container, Eyebrow, Heading, LinkedInIcon, Se
 import { FAQ_HOME, FOUNDERS } from '@/content/site';
 import { pageMeta, productLd } from '@/lib/seo';
 import { IntegrationFlow } from '@/components/IntegrationFlow';
+import { Aurora, ArtNumber, ArtScales, ArtWeeks, Confetti, MiniBars, MiniBubble, MiniGauge, MiniLang, MiniMerge, MiniQueue, Marquee, OrbitArt, Wave } from '@/components/art';
+import { CountUp, SpotlightCard, TimeCompare } from '@/components/fx';
 
 export const metadata = pageMeta({
-  title: 'Scholametrix — AI Evaluation for Written Exams | Fair, Fast, Teacher-Approved',
+  title: 'Scholametrix: AI Evaluation for Written Exams | Fair, Fast, Teacher-Approved',
   description:
-    'Mark written exam answers with AI against your own rubric. Marks per criterion, highlighted evidence and a clear reason for every answer — teachers approve every result. Connect your existing system or use our e-Exam platform.',
+    'Mark written exam answers with AI against your own rubric. Marks per criterion, highlighted evidence and a clear reason for every answer. Teachers approve every result. Connect your existing system or use our e-Exam platform.',
   path: '/',
 });
 
 const STEPS = [
-  { icon: <ListChecks />, title: 'Set the rubric', body: 'Write criteria with marks — or let Scholametrix draft a balanced rubric from your model answer. You review and approve it.' },
+  { icon: <ListChecks />, title: 'Set the rubric', body: 'Write criteria with marks, or let Scholametrix draft a balanced rubric from your model answer. You review and approve it.' },
   { icon: <FileCheck2 />, title: 'Students answer', body: 'In your existing exam system or LMS (connected by API), or in the Scholametrix e-Exam platform.' },
-  { icon: <Sparkles />, title: 'AI suggests marks', body: 'Every answer gets marks per criterion, highlighted evidence, strengths, gaps and a short reason — in seconds.' },
+  { icon: <Sparkles />, title: 'AI suggests marks', body: 'Every answer gets marks per criterion, highlighted evidence, strengths, gaps and a short reason, in seconds.' },
   { icon: <UserCheck />, title: 'Teachers approve', body: 'Accept with one tick, or adjust any criterion and note why. Only approved marks ever reach students.' },
 ];
 
 const PROBLEMS = [
   { icon: <Clock3 />, title: 'Weeks of marking', body: 'One course can mean hundreds of scripts. Results wait while teachers mark late into the night.' },
-  { icon: <Users />, title: 'Inconsistent marks', body: 'Different markers — or the same marker on a tired evening — give the same answer different marks.' },
+  { icon: <Users />, title: 'Inconsistent marks', body: 'Different markers, or the same marker on a tired evening, give the same answer different marks.' },
   { icon: <MessageSquareText />, title: 'A number, not a reason', body: 'Students rarely see why they lost marks, so they can’t learn from the exam they just sat.' },
 ];
 
@@ -69,10 +71,10 @@ const AUDIENCES = [
 
 const SECURITY = [
   { icon: <EyeOff />, title: 'No training on student work', body: 'Answers are processed only to mark them, through zero-data-retention AI providers.' },
-  { icon: <ShieldCheck />, title: 'Anonymous by design', body: 'Student names and IDs never reach the AI — only the answer text and an anonymous reference.' },
+  { icon: <ShieldCheck />, title: 'Anonymous by design', body: 'Student names and IDs never reach the AI. It only sees the answer text and an anonymous reference.' },
   { icon: <KeyRound />, title: 'Encrypted secrets', body: 'API keys are stored hashed; connection secrets are encrypted with AES-256-GCM.' },
   { icon: <Webhook />, title: 'Signed results', body: 'Every result is delivered by an HMAC-SHA256 signed, time-stamped webhook.' },
-  { icon: <ScrollText />, title: 'Full audit trail', body: 'Who approved or changed which mark, and when — recorded for every answer.' },
+  { icon: <ScrollText />, title: 'Full audit trail', body: 'Who approved or changed which mark, and when, recorded for every answer.' },
   { icon: <Server />, title: 'Your cloud or ours', body: 'Use our hosted service, or run it on your own servers for full data residency.' },
 ];
 
@@ -116,7 +118,8 @@ export default function HomePage() {
       <section className="relative -mt-18 overflow-hidden pt-18" aria-labelledby="hero-title">
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-50 via-white to-white" aria-hidden />
         <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black_25%,transparent_65%)]" aria-hidden />
-        <div className="pointer-events-none absolute -top-48 left-1/2 h-[520px] w-[1000px] -translate-x-1/2 rounded-full bg-aqua/25 blur-3xl" aria-hidden />
+        <Aurora />
+        <Confetti />
         <Container className="relative pt-14 text-center sm:pt-20">
           <div className="animate-rise" style={{ animationDelay: '0ms' }}>
             <Link
@@ -130,7 +133,7 @@ export default function HomePage() {
           </div>
           <div className="animate-rise" style={{ animationDelay: '50ms' }}>
             <h1 id="hero-title" className="mx-auto mt-7 max-w-4xl text-[2.6rem] leading-[1.04] font-extrabold sm:text-6xl lg:text-[4.4rem]">
-              Mark written exams in hours, not weeks — <Accent>fairly.</Accent>
+              Mark written exams in hours, not weeks. <Accent>Fairly.</Accent>
             </h1>
           </div>
           <div className="animate-rise" style={{ animationDelay: '100ms' }}>
@@ -170,6 +173,18 @@ export default function HomePage() {
                 </p>
                 <p className="font-display text-xl font-extrabold">7.7 seconds</p>
               </div>
+              <div className="animate-float [animation-delay:-2s] pointer-events-none absolute -top-5 right-12 hidden items-center gap-2 rounded-full bg-white py-2 pr-4 pl-2 text-sm font-semibold shadow-float xl:flex" aria-hidden>
+                <span className="flex size-7 items-center justify-center rounded-full bg-earned text-white">
+                  <Check className="size-4" strokeWidth={3} />
+                </span>
+                Teacher approved
+              </div>
+              <div className="animate-float-slow [animation-delay:-3s] pointer-events-none absolute -bottom-5 left-16 hidden items-center gap-2 rounded-full bg-white py-2 pr-4 pl-2 text-sm font-semibold shadow-float xl:flex" aria-hidden>
+                <span className="flex size-7 items-center justify-center rounded-full bg-brand-50 text-brand-600">
+                  <Highlighter className="size-4" />
+                </span>
+                4 highlights found
+              </div>
               <div className="animate-float-slow pointer-events-none absolute -right-16 -bottom-6 hidden rounded-2xl bg-white px-4 py-3 text-left shadow-float xl:block" aria-hidden>
                 <p className="flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-muted uppercase">
                   <Languages className="size-3.5 text-brand-600" /> Languages
@@ -184,6 +199,23 @@ export default function HomePage() {
             </p>
           </div>
         </Container>
+      </section>
+
+      <section aria-label="Capabilities" className="relative pb-10">
+        <Marquee
+          items={[
+            { icon: <ListChecks />, label: 'Rubric drafting' },
+            { icon: <Layers3 />, label: 'Marks per criterion' },
+            { icon: <Highlighter />, label: 'Highlighted evidence' },
+            { icon: <Languages />, label: 'English & বাংলা' },
+            { icon: <UserCheck />, label: 'Teacher approval' },
+            { icon: <Webhook />, label: 'Signed webhooks' },
+            { icon: <ScrollText />, label: 'Audit trail' },
+            { icon: <EyeOff />, label: 'Zero data retention' },
+            { icon: <Gauge />, label: 'Real-time and bulk lanes' },
+            { icon: <Wallet />, label: 'Pay per answer' },
+          ]}
+        />
       </section>
 
       {/* ── First client ───────────────────────────────────────────────────── */}
@@ -211,26 +243,35 @@ export default function HomePage() {
             eyebrow="The problem"
             title={
               <>
-                Written exams are the best test of understanding — and the <Accent>hardest</Accent> to mark.
+                Written exams are the best test of understanding, and the <Accent>hardest</Accent> to mark.
               </>
             }
           />
           <div className="mt-14 grid gap-5 md:grid-cols-3">
             {PROBLEMS.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.08}>
-                <Card className="h-full p-7">
-                  <div className="flex size-12 items-center justify-center rounded-2xl bg-missing-bg text-missing [&_svg]:size-6">{p.icon}</div>
-                  <h3 className="mt-5 text-xl font-semibold">{p.title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted">{p.body}</p>
-                </Card>
+                <SpotlightCard className="h-full">
+                  <div className="h-40 border-b border-line bg-gradient-to-b from-brand-50/80 to-white px-6 pt-4">{[<ArtWeeks key="a" />, <ArtScales key="b" />, <ArtNumber key="c" />][i]}</div>
+                  <div className="p-7">
+                    <div className="flex items-center gap-3">
+                      <span className="flex size-9 items-center justify-center rounded-xl bg-missing-bg text-missing [&_svg]:size-5">{p.icon}</span>
+                      <h3 className="text-xl font-semibold">{p.title}</h3>
+                    </div>
+                    <p className="mt-3 leading-relaxed text-muted">{p.body}</p>
+                  </div>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>
+          <Reveal className="mt-14">
+            <TimeCompare />
+          </Reveal>
         </Container>
       </Section>
 
       {/* ── How it works ───────────────────────────────────────────────────── */}
-      <Section id="how-it-works" labelledBy="how-title" className="bg-surface">
+      <Section id="how-it-works" labelledBy="how-title" className="mt-10 bg-surface">
+        <Wave className="text-surface" />
         <Container>
           <Heading
             id="how-title"
@@ -240,10 +281,13 @@ export default function HomePage() {
                 From rubric to released results in <Accent>four</Accent> steps
               </>
             }
-            lead="Scholametrix fits around the way your teachers already mark — it just does the first careful read for them."
+            lead="Scholametrix fits around the way your teachers already mark. It just does the first careful read for them."
           />
           <div className="relative mt-16">
-          <div className="pointer-events-none absolute top-7 right-[12%] left-[12%] hidden h-0.5 bg-gradient-to-r from-brand-100 via-brand-600/40 to-brand-100 lg:block" aria-hidden />
+          <div className="pointer-events-none absolute top-7 right-[12%] left-[12%] hidden h-0.5 lg:block" aria-hidden>
+            <div className="h-full w-full bg-[repeating-linear-gradient(90deg,var(--color-brand-600)_0_8px,transparent_8px_16px)] opacity-40" />
+            <span className="animate-travel absolute top-1/2 size-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-aqua shadow-[0_0_0_6px_rgba(21,217,252,0.25)]" />
+          </div>
           <ol className="relative grid gap-10 text-center md:grid-cols-2 lg:grid-cols-4 lg:text-left">
             {STEPS.map((s, i) => (
               <Reveal as="li" key={s.title} delay={i * 0.1} className="relative">
@@ -273,7 +317,7 @@ export default function HomePage() {
             eyebrow="What you get"
             title={
               <>
-                Everything a careful examiner does — at the <Accent>speed</Accent> of software
+                Everything a careful examiner does, at the <Accent>speed</Accent> of software
               </>
             }
           />
@@ -284,7 +328,7 @@ export default function HomePage() {
                   <Highlighter className="size-6 text-brand-600" />
                   <h3 className="mt-4 text-2xl font-semibold">Highlighted evidence, mark by mark</h3>
                   <p className="mt-2 max-w-lg leading-relaxed text-muted">
-                    The exact phrases that earned each mark are highlighted on the student’s own answer — and anything missing is called out against the rubric.
+                    The exact phrases that earned each mark are highlighted on the student’s own answer, and anything missing is called out against the rubric.
                   </p>
                 </div>
                 <div className="mt-6 border-t border-line bg-surface/70 p-6 text-[14.5px] leading-[1.8]">
@@ -311,27 +355,58 @@ export default function HomePage() {
               </div>
             </Reveal>
             {[
-              { icon: <Layers3 />, title: 'Marks per criterion', body: 'Not one opaque number: a mark for each criterion, rounded to your mark step (e.g. 0.5).' },
-              { icon: <MessageSquareText />, title: 'Why this mark', body: 'A short, plain reason the teacher can check — and the student can learn from.' },
-              { icon: <Languages />, title: 'English & বাংলা', body: 'Bangla script, English and mixed answers with formulas — highlights land on the right words.' },
-              { icon: <Gauge />, title: 'Built for exam day', body: 'Small exams are marked in real time; huge exams queue and finish steadily without slowing anyone down.' },
-              { icon: <Blocks />, title: 'Smart skips', body: 'Blank answers get zero instantly and identical answers reuse the first result — you never pay twice.' },
-              { icon: <Wallet />, title: 'Cost control', body: 'A clear price per answer, monthly usage limits and a statement every month.' },
+              { art: <MiniBars />, icon: <Layers3 />, title: 'Marks per criterion', body: 'Not one opaque number: a mark for each criterion, rounded to your mark step (e.g. 0.5).' },
+              { art: <MiniBubble />, icon: <MessageSquareText />, title: 'Why this mark', body: 'A short, plain reason the teacher can check and the student can learn from.' },
+              { art: <MiniLang />, icon: <Languages />, title: 'English & বাংলা', body: 'Bangla script, English and mixed answers with formulas. Highlights land on the right words.' },
+              { art: <MiniQueue />, icon: <Gauge />, title: 'Built for exam day', body: 'Small exams are marked in real time; huge exams queue and finish steadily without slowing anyone down.' },
+              { art: <MiniMerge />, icon: <Blocks />, title: 'Smart skips', body: 'Blank answers get zero instantly and identical answers reuse the first result, so you never pay twice.' },
+              { art: <MiniGauge />, icon: <Wallet />, title: 'Cost control', body: 'A clear price per answer, monthly usage limits and a statement every month.' },
             ].map((f, i) => (
               <Reveal key={f.title} className="lg:col-span-2" delay={(i % 3) * 0.06}>
-                <Card className="h-full p-7">
-                  <div className="text-brand-600 [&_svg]:size-6">{f.icon}</div>
-                  <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
-                  <p className="mt-2 leading-relaxed text-muted">{f.body}</p>
-                </Card>
+                <SpotlightCard className="h-full">
+                  <div className="h-32 border-b border-line bg-gradient-to-b from-brand-50/70 to-white px-5 py-4">{f.art}</div>
+                  <div className="p-6">
+                    <h3 className="flex items-center gap-2 text-lg font-semibold">
+                      <span className="text-brand-600 [&_svg]:size-5">{f.icon}</span>
+                      {f.title}
+                    </h3>
+                    <p className="mt-2 leading-relaxed text-muted">{f.body}</p>
+                  </div>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>
         </Container>
       </Section>
 
+      {/* ── Numbers ────────────────────────────────────────────────────────── */}
+      <section aria-label="By the numbers" className="relative overflow-hidden bg-navy py-16 text-white sm:py-20">
+        <Aurora dark className="opacity-60" />
+        <div className="bg-dots pointer-events-none absolute inset-0 opacity-40" aria-hidden />
+        <Container className="relative">
+          <dl className="grid gap-10 text-center sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { n: 500, s: '', k: 'answers in a single API request', icon: <Layers3 /> },
+              { n: 2, s: '', k: 'languages: English and বাংলা', icon: <Languages /> },
+              { n: 1, s: ' tick', k: 'for a teacher to approve a mark', icon: <UserCheck /> },
+              { n: 0, s: '', k: 'marks released without a teacher', icon: <ShieldCheck /> },
+            ].map((x) => (
+              <Reveal key={x.k}>
+                <div className="mx-auto flex size-11 items-center justify-center rounded-2xl bg-white/10 text-aqua [&_svg]:size-5">{x.icon}</div>
+                <dt className="sr-only">{x.k}</dt>
+                <dd className="mt-4 font-display text-5xl font-extrabold tracking-tight sm:text-6xl">
+                  <CountUp to={x.n} suffix={x.s} />
+                </dd>
+                <p className="mx-auto mt-2 max-w-[220px] text-[15px] leading-snug text-white/70">{x.k}</p>
+              </Reveal>
+            ))}
+          </dl>
+        </Container>
+      </section>
+
       {/* ── Teacher in control ─────────────────────────────────────────────── */}
       <Section labelledBy="control-title" className="bg-surface">
+        <Wave className="text-surface" />
         <Container className="grid items-center gap-14 lg:grid-cols-2">
           <div>
             <Heading
@@ -343,12 +418,12 @@ export default function HomePage() {
                   The AI suggests. Your teachers <Accent>decide.</Accent>
                 </>
               }
-              lead="Every Scholametrix mark starts as a suggestion. Teachers see the highlighted answer, the reason and the criterion marks side by side — then accept with a tick or adjust."
+              lead="Every Scholametrix mark starts as a suggestion. Teachers see the highlighted answer, the reason and the criterion marks side by side, then accept with a tick or adjust."
             />
             <ul className="mt-8 space-y-4">
               {[
                 'Nothing reaches a student without a teacher’s approval',
-                'Adjust any criterion and record why — raising a mark requires a reason',
+                'Adjust any criterion and record why. Raising a mark requires a reason',
                 'Every decision is stored, so you can measure how often teachers agree with the AI',
               ].map((t) => (
                 <li key={t} className="flex gap-3 leading-relaxed">
@@ -360,7 +435,7 @@ export default function HomePage() {
               ))}
             </ul>
             <p className="mt-8 text-sm leading-relaxed text-muted">
-              On the right: a real Bangla answer and the AI’s real suggestion. The AI gave full marks for “required materials” even though chlorophyll is missing — the teacher catches it and adjusts. That’s the point of review.
+              On the right: a real Bangla answer and the AI’s real suggestion. The AI gave full marks for “required materials” even though chlorophyll is missing. The teacher catches it and adjusts. That’s the point of review.
             </p>
           </div>
           <Reveal>
@@ -377,7 +452,7 @@ export default function HomePage() {
             eyebrow="Two ways to use Scholametrix"
             title={
               <>
-                Plug AI evaluation into your system — or use <Accent>ours</Accent>
+                Plug AI evaluation into your system, or use <Accent>ours</Accent>
               </>
             }
             lead="Our core service is AI evaluation. Connect it to the exam system or LMS you already run, or adopt our complete e-Exam platform with AI marking built in."
@@ -436,11 +511,11 @@ export default function HomePage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {AUDIENCES.map((a, i) => (
               <Reveal key={a.title} delay={i * 0.06}>
-                <Card className="h-full p-6 transition-transform duration-300 hover:-translate-y-1">
-                  <div className="flex size-11 items-center justify-center rounded-xl bg-brand-50 text-brand-600 [&_svg]:size-5">{a.icon}</div>
-                  <h3 className="mt-4 text-lg font-semibold">{a.title}</h3>
+                <SpotlightCard className="h-full p-6">
+                  <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-gradient text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6 [&_svg]:size-5">{a.icon}</div>
+                  <h3 className="mt-5 text-lg font-semibold">{a.title}</h3>
                   <p className="mt-2 leading-relaxed text-muted">{a.body}</p>
-                </Card>
+                </SpotlightCard>
               </Reveal>
             ))}
           </div>
@@ -476,31 +551,44 @@ export default function HomePage() {
 
       {/* ── Security ───────────────────────────────────────────────────────── */}
       <Section labelledBy="security-title">
-        <Container>
-          <Heading
-            id="security-title"
-            eyebrow="Security & privacy"
-            title={
-              <>
-                Student data, treated like exam papers — <Accent>locked</Accent> down
-              </>
-            }
+        <Container className="grid items-center gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+          <OrbitArt
+            center={<ShieldCheck />}
+            items={[
+              { icon: <Lock />, label: 'Encrypted' },
+              { icon: <KeyRound />, label: 'Hashed keys' },
+              { icon: <Webhook />, label: 'Signed results' },
+              { icon: <ScrollText />, label: 'Audit log' },
+              { icon: <EyeOff />, label: 'No training' },
+            ]}
           />
-          <div className="mt-14 grid gap-x-10 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
-            {SECURITY.map((s, i) => (
-              <Reveal key={s.title} delay={(i % 3) * 0.06} className="flex gap-4">
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 [&_svg]:size-5">{s.icon}</div>
-                <div>
-                  <h3 className="text-[17px] font-semibold">{s.title}</h3>
-                  <p className="mt-1.5 leading-relaxed text-muted">{s.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <ButtonLink href="/security" variant="secondary">
-              <Lock /> Read our security approach
-            </ButtonLink>
+          <div>
+            <Heading
+              id="security-title"
+              align="left"
+              eyebrow="Security & privacy"
+              title={
+                <>
+                  Student data is treated like exam papers: <Accent>locked</Accent> down
+                </>
+              }
+            />
+            <div className="mt-10 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+              {SECURITY.map((s, i) => (
+                <Reveal key={s.title} delay={(i % 2) * 0.06} className="flex gap-4">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600 [&_svg]:size-5">{s.icon}</div>
+                  <div>
+                    <h3 className="text-[17px] font-semibold">{s.title}</h3>
+                    <p className="mt-1.5 leading-relaxed text-muted">{s.body}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <div className="mt-10">
+              <ButtonLink href="/security" variant="secondary">
+                <Lock /> Read our security approach
+              </ButtonLink>
+            </div>
           </div>
         </Container>
       </Section>
@@ -547,13 +635,14 @@ export default function HomePage() {
                 Built by people who know the <Accent>exam hall</Accent>
               </>
             }
-            lead="Scholametrix started at the University of Rajshahi. We build every part of it ourselves — from the AI evaluation engine to the screens teachers mark on."
+            lead="Scholametrix started at the University of Rajshahi. We build every part of it ourselves, from the AI evaluation engine to the screens teachers mark on."
           />
           <div className="mx-auto mt-14 grid max-w-4xl gap-6 sm:grid-cols-2">
             {FOUNDERS.map((f, i) => (
               <Reveal key={f.name} delay={i * 0.08}>
                 <Card flush className="group h-full overflow-hidden">
-                  <div className="relative aspect-[4/4.2] overflow-hidden bg-brand-50">
+                  <div className="relative aspect-[4/4.2] overflow-hidden bg-gradient-to-br from-brand-100 to-aqua/30">
+                    <span className="animate-blob absolute -top-10 -right-10 size-40 rounded-full bg-aqua/40 blur-2xl" aria-hidden />
                     <Image src={f.image} alt={`${f.name}, ${f.role} of Scholametrix`} fill sizes="(min-width: 640px) 440px, 100vw" className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]" />
                   </div>
                   <div className="flex items-start justify-between gap-4 p-6">

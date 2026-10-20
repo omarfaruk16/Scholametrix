@@ -4,7 +4,7 @@ export const SITE = {
   apiUrl: process.env.NEXT_PUBLIC_API_URL ?? 'https://api.scholametrix.tech',
   tagline: 'Fair, fast AI marking for written exams.',
   description:
-    'Scholametrix marks written exam answers with AI against your own rubric — marks for every criterion, highlighted evidence and a clear reason — and your teachers approve every result.',
+    'Scholametrix marks written exam answers with AI against your own rubric: marks for every criterion, highlighted evidence and a clear reason. Your teachers approve every result.',
   email: 'scholametrix@gmail.com',
   location: 'Rajshahi, Bangladesh',
   founded: '2026',
@@ -61,7 +61,7 @@ export const FOUNDERS = [
     role: 'Founder & CEO',
     image: '/images/team/md-omar-faruk.webp',
     linkedin: SITE.linkedin.omar,
-    bio: 'Omar leads Scholametrix’s product and engineering. He designed and built the Scholametrix AI evaluation engine and the e-Exam platform running at the University of Rajshahi — from rubric drafting to the teacher review workflow.',
+    bio: 'Omar leads Scholametrix’s product and engineering. He designed and built the Scholametrix AI evaluation engine and the e-Exam platform running at the University of Rajshahi, from rubric drafting to the teacher review workflow.',
   },
   {
     name: 'Khalid Hossen',
@@ -87,11 +87,11 @@ export const FAQ_HOME = [
   },
   {
     q: 'How accurate is it?',
-    a: 'Quality depends on a clear rubric, so we help you write one — and the AI can draft it from your model answer. Because teachers review every suggestion, the system measures how often teachers agree with the AI for each course, and we share those numbers with you during the pilot.',
+    a: 'Quality depends on a clear rubric, so we help you write one, and the AI can draft it from your model answer. Because teachers review every suggestion, the system measures how often teachers agree with the AI for each course, and we share those numbers with you during the pilot.',
   },
   {
     q: 'Is student data used to train AI models?',
-    a: 'No. Answers are processed only to mark them, through AI providers that keep zero data. We never send student names or IDs to the AI — only the answer text with an anonymous reference.',
+    a: 'No. Answers are processed only to mark them, through AI providers that keep zero data. We never send student names or IDs to the AI, only the answer text with an anonymous reference.',
   },
   {
     q: 'How long does marking take?',

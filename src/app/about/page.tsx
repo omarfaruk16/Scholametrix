@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { UserCheck as IUserCheck, Eye as IEye, ShieldCheck as IShieldCheck, BookOpenCheck as IBookOpenCheck } from 'lucide-react';
+import { OrbitArt, DevicesArt, FlowArt, ReceiptArt, ChecklistArt } from '@/components/art';
 import { ArrowRight, Eye, HeartHandshake, Scale, ShieldCheck, Target, UserCheck } from 'lucide-react';
 import { CtaBand, PageHero } from '@/components/blocks';
 import { JsonLd } from '@/components/JsonLd';
@@ -8,7 +10,7 @@ import { FOUNDERS, SITE } from '@/content/site';
 import { pageMeta } from '@/lib/seo';
 
 export const metadata = pageMeta({
-  title: 'About Us — Our Mission and Founders',
+  title: 'About Us: Our Mission and Founders',
   description:
     'Scholametrix is an AI assessment startup from Rajshahi, Bangladesh, founded by MD Omar Faruk (Founder & CEO) and Khalid Hossen (Co-founder). Our mission: fair, fast and explained marks for every written answer.',
   path: '/about',
@@ -17,7 +19,7 @@ export const metadata = pageMeta({
 const VALUES = [
   { icon: <UserCheck />, t: 'Teachers decide', b: 'AI is an assistant to examiners, never a replacement. Every released mark is a teacher’s decision.' },
   { icon: <Eye />, t: 'Show the evidence', b: 'A mark without a reason isn’t good enough. We always show what earned it and what was missing.' },
-  { icon: <ShieldCheck />, t: 'Privacy by default', b: 'Student work is processed only to mark it — anonymously, and never to train AI.' },
+  { icon: <ShieldCheck />, t: 'Privacy by default', b: 'Student work is processed only to mark it, anonymously, and never to train AI.' },
   { icon: <Scale />, t: 'Build for real classrooms', b: 'Bangla and English, weak connections, huge exam days, tight budgets. We design for the institutions we serve.' },
 ];
 
@@ -49,8 +51,9 @@ export default function AboutPage() {
             Every written answer deserves a fair, fast and <Accent>explained</Accent> mark
           </>
         }
-        lead="Online exams made submitting answers instant — but written answers still take weeks to mark, and students rarely learn why they lost marks. We started Scholametrix to fix that, without taking the decision away from teachers."
+        lead="Online exams made submitting answers instant, but written answers still take weeks to mark, and students rarely learn why they lost marks. We started Scholametrix to fix that, without taking the decision away from teachers."
         crumbs={[{ name: 'About', path: '/about' }]}
+        art={<OrbitArt light center={<Image src="/images/logo.png" alt="" width={80} height={80} />} items={[{ icon: <IUserCheck />, label: 'Teachers decide' }, { icon: <IEye />, label: 'Show evidence' }, { icon: <IShieldCheck />, label: 'Privacy' }, { icon: <IBookOpenCheck />, label: 'Real classrooms' }]} />}
       />
 
       <Section className="pt-0 sm:pt-0 lg:pt-0" labelledBy="mission-title">
@@ -69,7 +72,7 @@ export default function AboutPage() {
             <div className="h-full rounded-2xl bg-navy p-8 text-white shadow-card">
               <HeartHandshake className="size-7 text-aqua" />
               <h3 className="mt-4 text-2xl font-bold text-white">Our vision</h3>
-              <p className="mt-3 text-lg leading-relaxed text-white/75">A world where students get their marks — and the reasons behind them — while the exam is still fresh in their minds.</p>
+              <p className="mt-3 text-lg leading-relaxed text-white/75">A world where students get their marks, and the reasons behind them, while the exam is still fresh in their minds.</p>
             </div>
           </Reveal>
         </Container>

@@ -1,4 +1,5 @@
 import { ArrowRight, Check, FileCheck2, ListChecks, Rocket, Sparkles, UserCheck } from 'lucide-react';
+import { OrbitArt, DevicesArt, FlowArt, ReceiptArt, ChecklistArt } from '@/components/art';
 import { CtaBand, PageHero } from '@/components/blocks';
 import { MarkingDemo } from '@/components/MarkingDemo';
 import { Reveal } from '@/components/Reveal';
@@ -7,7 +8,7 @@ import { Accent, ButtonLink, Container, Section } from '@/components/ui';
 import { pageMeta } from '@/lib/seo';
 
 export const metadata = pageMeta({
-  title: 'How It Works — From Rubric to Released Results',
+  title: 'How It Works: From Rubric to Released Results',
   description:
     'How Scholametrix AI evaluation works: approve a rubric, collect answers in your system or our e-Exam platform, get AI-suggested marks with evidence, and let teachers approve every result.',
   path: '/how-it-works',
@@ -17,13 +18,13 @@ const STEPS = [
   {
     icon: <ListChecks />,
     title: 'Set and approve the rubric',
-    body: 'For each written question, a teacher writes criteria with marks — or pastes the model answer and lets Scholametrix draft a rubric. Scholametrix checks that marks add up and that every criterion comes from the model answer. The teacher edits and approves it.',
+    body: 'For each written question, a teacher writes criteria with marks, or pastes the model answer and lets Scholametrix draft a rubric. Scholametrix checks that marks add up and that every criterion comes from the model answer. The teacher edits and approves it.',
     points: ['AI-drafted rubrics from your model answer', 'Marks in steps you choose (e.g. 0.5)', 'Approved once, reused for every student'],
   },
   {
     icon: <FileCheck2 />,
     title: 'Students sit the exam',
-    body: 'Students answer in your existing exam system, LMS or portal — or in the Scholametrix e-Exam platform with its secure timer and autosave. When the exam ends, written answers are sent to Scholametrix with an anonymous reference; names and IDs stay in your system.',
+    body: 'Students answer in your existing exam system, LMS or portal, or in the Scholametrix e-Exam platform with its secure timer and autosave. When the exam ends, written answers are sent to Scholametrix with an anonymous reference; names and IDs stay in your system.',
     points: ['Your system via API, or our e-Exam platform', 'Only answer text leaves your system', 'Blank answers scored zero instantly'],
   },
   {
@@ -40,7 +41,7 @@ const STEPS = [
   },
   {
     icon: <Rocket />,
-    title: 'Results go out — with reasons',
+    title: 'Results go out, with reasons',
     body: 'Once every answer is approved, results are published. Students see the marks for each criterion with their answer highlighted, so they learn from the exam instead of just receiving a number.',
     points: ['Results in days, not weeks', 'Criterion marks for students', 'Reports and mark sheets'],
   },
@@ -53,11 +54,12 @@ export default function HowItWorksPage() {
         eyebrow="How it works"
         title={
           <>
-            From rubric to released results — <Accent>step by step</Accent>
+            From rubric to released results, <Accent>step by step</Accent>
           </>
         }
         lead="Scholametrix does the first careful read of every written answer. Your teachers keep the final say. Here’s exactly what happens."
         crumbs={[{ name: 'How it works', path: '/how-it-works' }]}
+        art={<FlowArt />}
       />
 
       <Section className="pt-0 sm:pt-0 lg:pt-0" labelledBy="steps-title">
@@ -92,7 +94,7 @@ export default function HowItWorksPage() {
           <h2 id="see-title" className="text-center text-[2rem] font-bold sm:text-[2.6rem]">
             Steps 3 and 4, <Accent>live</Accent>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">Real answers and the AI’s real suggestions — first in English, then in Bangla with a teacher’s adjustment.</p>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">Real answers and the AI’s real suggestions: first in English, then in Bangla with a teacher’s adjustment.</p>
           <div className="mx-auto mt-12 grid max-w-[980px] items-start gap-8">
             <Reveal>
               <MarkingDemo />

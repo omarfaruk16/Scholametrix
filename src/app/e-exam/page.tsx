@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { OrbitArt, DevicesArt, FlowArt, ReceiptArt, ChecklistArt } from '@/components/art';
 import { ArrowRight, BarChart3, CalendarClock, CheckCheck, ClipboardCheck, FileSpreadsheet, Keyboard, LibraryBig, ScrollText, ShieldCheck, Smartphone, Timer, Users } from 'lucide-react';
 import { BrowserFrame, CtaBand, PageHero } from '@/components/blocks';
 import { JsonLd } from '@/components/JsonLd';
@@ -7,7 +8,7 @@ import { Accent, ButtonLink, Card, Container, Heading, Section } from '@/compone
 import { pageMeta, productLd } from '@/lib/seo';
 
 export const metadata = pageMeta({
-  title: 'e-Exam Platform — Online Examination System with AI Marking',
+  title: 'e-Exam Platform: Online Examination System with AI Marking',
   description:
     'A secure online examination system for universities and colleges: question bank with rubrics, exam approval, timed exams with autosave, automatic MCQ marking, AI-assisted written marking, results and reports.',
   path: '/e-exam',
@@ -20,7 +21,7 @@ const MODULES = [
   { icon: <CheckCheck />, title: 'Instant MCQ marking', body: 'Multiple-choice answers are marked exactly, the moment the exam ends.' },
   { icon: <ScrollText />, title: 'AI-assisted written marking', body: 'Written answers arrive in the evaluation workspace with AI-suggested marks; teachers approve or adjust.' },
   { icon: <FileSpreadsheet />, title: 'Results & final marking', body: 'Mark sheets, result publishing and Excel / PDF reports for every course part.' },
-  { icon: <Users />, title: 'Roles for everyone', body: 'Super admin, faculty admin, department head, teacher and student — each sees only their own scope.' },
+  { icon: <Users />, title: 'Roles for everyone', body: 'Super admin, faculty admin, department head, teacher and student. Each sees only their own scope.' },
   { icon: <CalendarClock />, title: 'Live dashboards', body: 'Exam calendar, submissions, marking queue and performance at a glance for every role.' },
   { icon: <Keyboard />, title: 'Typing practice', body: 'A built-in typing course, speed tests and badges so students are ready to write online.' },
 ];
@@ -33,11 +34,12 @@ export default function EExamPage() {
         eyebrow="e-Exam Platform"
         title={
           <>
-            The complete online exam system — with AI marking <Accent>built in</Accent>
+            The complete online exam system, with AI marking <Accent>built in</Accent>
           </>
         }
         lead="No online exam system yet? Scholametrix e-Exam takes you from question bank to published results in one secure platform. It’s the system the University of Rajshahi runs on."
         crumbs={[{ name: 'e-Exam Platform', path: '/e-exam' }]}
+        art={<DevicesArt />}
         actions={
           <>
             <ButtonLink href="/contact" size="lg">
@@ -48,11 +50,7 @@ export default function EExamPage() {
             </ButtonLink>
           </>
         }
-      >
-        <div className="animate-rise mt-14" style={{ animationDelay: '150ms' }}>
-          <BrowserFrame src="/images/screens/student-dashboard.webp" alt="Scholametrix e-Exam student dashboard: courses, upcoming exams, exam calendar, score trend and typing practice" priority />
-        </div>
-      </PageHero>
+      />
 
       <Section labelledBy="modules-title" className="bg-surface">
         <Container>
@@ -78,7 +76,7 @@ export default function EExamPage() {
             align="left"
             eyebrow="For teachers"
             title="Everything for the course in one place"
-            lead="The teacher dashboard shows this month’s exams, answers waiting to be marked and the top students — and the question bank keeps every question’s rubric approved and ready for AI marking."
+            lead="The teacher dashboard shows this month’s exams, answers waiting to be marked and the top students, and the question bank keeps every question’s rubric approved and ready for AI marking."
           />
           <Reveal>
             <BrowserFrame src="/images/screens/teacher-questions.webp" alt="Question bank with written questions and approved rubrics in Scholametrix e-Exam" />
@@ -96,7 +94,7 @@ export default function EExamPage() {
               id="students-title"
               align="left"
               eyebrow="For students"
-              title="Ready for online exams — on any device"
+              title="Ready for online exams on any device"
               lead="Students see their courses, upcoming exams, results and score trend in one place. A built-in typing course helps everyone write comfortably before exam day."
             />
             <div className="mt-8 flex items-end gap-5">
@@ -140,7 +138,7 @@ export default function EExamPage() {
       </Section>
 
       <CtaBand
-        title="Bring your exams online — with marking that keeps up"
+        title="Bring your exams online, with marking that keeps up"
         lead="We’ll set up the e-Exam platform for one department as a pilot, including your question bank and rubrics."
       />
     </>

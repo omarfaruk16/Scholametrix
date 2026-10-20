@@ -1,4 +1,6 @@
 import { ArrowRight, Award, BadgeCheck, BookOpenText, Building2, Check, FlaskConical, GraduationCap, HandCoins, LineChart, Megaphone, Rocket, School } from 'lucide-react';
+import { Handshake as IHandshake, School as ISchool, FlaskConical as IFlaskConical, HandCoins as IHandCoins, LineChart as ILineChart } from 'lucide-react';
+import { OrbitArt, DevicesArt, FlowArt, ReceiptArt, ChecklistArt } from '@/components/art';
 import { PageHero } from '@/components/blocks';
 import { LeadForm } from '@/components/LeadForm';
 import { Reveal } from '@/components/Reveal';
@@ -26,7 +28,7 @@ const TRACKS = [
   {
     icon: <HandCoins />,
     t: 'Sponsors & investors',
-    b: 'Help us reach more institutions faster — from funding free pilots for public universities to backing the company’s growth.',
+    b: 'Help us reach more institutions faster, from funding free pilots for public universities to backing the company’s growth.',
   },
 ];
 
@@ -64,6 +66,7 @@ export default function PartnersPage() {
         }
         lead="Written exams test real understanding, but marking them doesn’t scale. We’re looking for institutions, researchers, sponsors and investors who want every student to get a fair, fast and explained mark."
         crumbs={[{ name: 'Partners & sponsors', path: '/partners' }]}
+        art={<OrbitArt center={<IHandshake />} items={[{ icon: <ISchool />, label: 'Pilots' }, { icon: <IFlaskConical />, label: 'Research' }, { icon: <IHandCoins />, label: 'Sponsors' }, { icon: <ILineChart />, label: 'Investors' }]} />}
       />
 
       <Section className="pt-0 sm:pt-0 lg:pt-0" labelledBy="tracks-title">
@@ -92,14 +95,14 @@ export default function PartnersPage() {
             align="left"
             eyebrow="Why now"
             title="Exams are moving online. Marking capacity isn’t."
-            lead="Universities and colleges are bringing exams online quickly, but every written answer still needs a careful read. AI can now mark against a rubric and explain itself — and with teachers approving every mark, institutions can adopt it responsibly."
+            lead="Universities and colleges are bringing exams online quickly, but every written answer still needs a careful read. AI can now mark against a rubric and explain itself, and with teachers approving every mark, institutions can adopt it responsibly."
           />
           <div className="grid gap-4 sm:grid-cols-2">
             {[
               { icon: <BadgeCheck />, t: 'Live in production', b: 'Running at the University of Rajshahi, our first client.' },
               { icon: <BookOpenText />, t: 'English & Bangla', b: 'Built for Bangladeshi classrooms from day one.' },
               { icon: <Building2 />, t: 'Two products', b: 'An AI evaluation API and a complete e-Exam platform.' },
-              { icon: <LineChart />, t: 'Usage-based revenue', b: 'Institutions pay per answer marked — it grows with every exam.' },
+              { icon: <LineChart />, t: 'Usage-based revenue', b: 'Institutions pay per answer marked, so it grows with every exam.' },
             ].map((f, i) => (
               <Reveal key={f.t} delay={i * 0.05}>
                 <Card className="h-full">
@@ -123,7 +126,7 @@ export default function PartnersPage() {
                 Ways to <Accent>sponsor</Accent> Scholametrix
               </>
             }
-            lead="Every sponsorship is agreed individually. These are starting points — tell us what matters to you."
+            lead="Every sponsorship is agreed individually. These are starting points. Tell us what matters to you."
           />
           <div className="mt-14 grid gap-6 lg:grid-cols-3">
             {TIERS.map((t, i) => (

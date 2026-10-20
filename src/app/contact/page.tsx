@@ -1,4 +1,6 @@
 import { Clock, Mail, MapPin, Sparkles } from 'lucide-react';
+import { Mail as IMail, Monitor as IMonitor, Sparkles as ISparkles, Handshake as IHandshake, MessageSquareText as IMessageSquareText } from 'lucide-react';
+import { OrbitArt, DevicesArt, FlowArt, ReceiptArt, ChecklistArt } from '@/components/art';
 import Link from 'next/link';
 import { PageHero } from '@/components/blocks';
 import { LeadForm } from '@/components/LeadForm';
@@ -25,6 +27,7 @@ export default function ContactPage() {
         }
         lead="Tell us about your institution and what you’d like to see. We reply within one working day to set up a live demo."
         crumbs={[{ name: 'Contact', path: '/contact' }]}
+        art={<OrbitArt center={<IMail />} items={[{ icon: <IMonitor />, label: 'Live demo' }, { icon: <ISparkles />, label: 'Free pilot' }, { icon: <IHandshake />, label: 'Partnership' }, { icon: <IMessageSquareText />, label: 'Questions' }]} />}
       />
       <Section className="pt-0 sm:pt-0 lg:pt-0" labelledBy="contact-details">
         <Container className="grid items-start gap-12 lg:grid-cols-[1.5fr_1fr]">
@@ -48,7 +51,7 @@ export default function ContactPage() {
                   <MapPin className="mt-0.5 size-5 shrink-0 text-brand-600" />
                   <span>
                     <span className="block font-semibold">Based in</span>
-                    {SITE.location} — working with institutions everywhere
+                    {SITE.location}, working with institutions everywhere
                   </span>
                 </li>
                 <li className="flex gap-3">

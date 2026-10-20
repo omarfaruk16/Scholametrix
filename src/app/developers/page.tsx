@@ -1,4 +1,6 @@
 import { ArrowRight, KeyRound, Send, ShieldCheck, Webhook } from 'lucide-react';
+import { Code2 as ICode2, Send as ISend, Webhook as IWebhook, KeyRound as IKeyRound, ListChecks as IListChecks, FileCheck2 as IFileCheck2 } from 'lucide-react';
+import { OrbitArt, DevicesArt, FlowArt, ReceiptArt, ChecklistArt } from '@/components/art';
 import { CtaBand, PageHero } from '@/components/blocks';
 import { CodeBlock } from '@/components/CodeBlock';
 import { Reveal } from '@/components/Reveal';
@@ -97,6 +99,7 @@ export default function DevelopersPage() {
         }
         lead="A small REST API with signed webhooks. Send written answers with a rubric; get back marks per criterion, highlight positions and reasons you can show teachers straight away."
         crumbs={[{ name: 'Developers', path: '/developers' }]}
+        art={<OrbitArt center={<ICode2 />} items={[{ icon: <ISend />, label: 'Submit' }, { icon: <IWebhook />, label: 'Webhook' }, { icon: <IKeyRound />, label: 'API key' }, { icon: <IListChecks />, label: 'Rubric' }, { icon: <IFileCheck2 />, label: 'Results' }]} />}
         actions={
           <>
             <ButtonLink href="/contact" size="lg">
@@ -185,7 +188,7 @@ export default function DevelopersPage() {
               {[
                 'Every delivery carries X-AMS-Signature: an HMAC-SHA256 over the timestamp and raw body.',
                 'Reply 2xx within 10 seconds; failures retry with exponential backoff, up to 8 attempts.',
-                'Deliveries can repeat or arrive out of order — upsert by evaluation id.',
+                'Deliveries can repeat or arrive out of order, so upsert by evaluation id.',
                 'Prefer polling? GET /v1/evaluations?groupId=…&updatedSince=… returns the same data.',
               ].map((t) => (
                 <li key={t} className="flex gap-3">

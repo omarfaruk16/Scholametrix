@@ -8,7 +8,7 @@ export default function NotFound() {
       <Container className="relative py-28 text-center sm:py-36">
         <p className="font-display text-7xl font-extrabold text-brand-600 sm:text-8xl">404</p>
         <h1 className="mx-auto mt-6 max-w-xl text-3xl font-bold sm:text-4xl">
-          This page went missing — like an <Accent>unmarked</Accent> script.
+          This page went missing, like an <Accent>unmarked</Accent> script.
         </h1>
         <p className="mx-auto mt-4 max-w-md text-lg text-muted">The page you were looking for doesn’t exist or has moved.</p>
         <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">

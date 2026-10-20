@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { FOUNDERS, SITE } from '@/content/site';
 
-export const OG_IMAGE = { url: '/og.png', width: 1200, height: 630, alt: 'Scholametrix — Fair, fast AI marking for written exams' };
+export const OG_IMAGE = { url: '/og.png', width: 1200, height: 630, alt: 'Scholametrix: Fair, fast AI marking for written exams' };
 
 export function pageMeta({ title, description, path }: { title: string; description: string; path: string }): Metadata {
   const url = `${SITE.url}${path === '/' ? '' : path}`;

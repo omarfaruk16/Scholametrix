@@ -1,4 +1,5 @@
 import { ArrowRight, Check } from 'lucide-react';
+import { OrbitArt, DevicesArt, FlowArt, ReceiptArt, ChecklistArt } from '@/components/art';
 import { CtaBand, Faq, PageHero } from '@/components/blocks';
 import { JsonLd } from '@/components/JsonLd';
 import { Reveal } from '@/components/Reveal';
@@ -6,7 +7,7 @@ import { Accent, ButtonLink, cn, Container, Heading, Section } from '@/component
 import { faqLd, pageMeta } from '@/lib/seo';
 
 export const metadata = pageMeta({
-  title: 'Pricing — Free Pilot, Then Pay Per Answer Marked',
+  title: 'Pricing: Free Pilot, Then Pay Per Answer Marked',
   description:
     'Start with a free pilot for one course or department. Then pay per written answer marked, with a monthly allowance, usage limits and a clear monthly statement. e-Exam platform and enterprise plans available.',
   path: '/pricing',
@@ -58,8 +59,9 @@ export default function PricingPage() {
             Start <Accent>free.</Accent> Pay only for answers marked.
           </>
         }
-        lead="Every institution begins with a free pilot. After that, you pay per written answer the AI marks — with a monthly allowance, limits you control and a clear statement every month."
+        lead="Every institution begins with a free pilot. After that, you pay per written answer the AI marks, with a monthly allowance, limits you control and a clear statement every month."
         crumbs={[{ name: 'Pricing', path: '/pricing' }]}
+        art={<ReceiptArt />}
       />
       <Section className="pt-0 sm:pt-0 lg:pt-0" labelledBy="plans-title">
         <Container>

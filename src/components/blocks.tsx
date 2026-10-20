@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { JsonLd } from './JsonLd';
 import { breadcrumbLd, faqLd } from '@/lib/seo';
+import { Aurora, Confetti } from './art';
 import { ButtonLink, cn, Container, Eyebrow } from './ui';
 
 /** A real product screenshot in browser chrome. */
@@ -39,6 +40,7 @@ export function PageHero({
   lead,
   crumbs,
   actions,
+  art,
   children,
 }: {
   eyebrow: string;
@@ -46,6 +48,8 @@ export function PageHero({
   lead: ReactNode;
   crumbs: { name: string; path: string }[];
   actions?: ReactNode;
+  /** Illustration shown beside the text on large screens and below it on small ones. */
+  art?: ReactNode;
   children?: ReactNode;
 }) {
   return (
@@ -53,7 +57,8 @@ export function PageHero({
       <JsonLd data={breadcrumbLd(crumbs)} />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-50 via-white to-white" aria-hidden />
       <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_70%)]" aria-hidden />
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[900px] -translate-x-1/2 rounded-full bg-aqua/20 blur-3xl" aria-hidden />
+      <Aurora />
+      <Confetti />
       <Container className="relative pt-12 pb-16 sm:pt-16 sm:pb-20">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-muted">
           <ol className="flex flex-wrap items-center gap-1.5">
@@ -78,11 +83,14 @@ export function PageHero({
             ))}
           </ol>
         </nav>
-        <div className="max-w-3xl">
-          <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="mt-4 text-[2.5rem] leading-[1.06] font-extrabold sm:text-6xl">{title}</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">{lead}</p>
-          {actions && <div className="mt-8 flex flex-wrap gap-3">{actions}</div>}
+        <div className={cn(!!art && 'grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]')}>
+          <div className={cn(!art && 'max-w-3xl')}>
+            <Eyebrow>{eyebrow}</Eyebrow>
+            <h1 className={cn('mt-4 leading-[1.06] font-extrabold', art ? 'text-[2.5rem] sm:text-5xl xl:text-[3.5rem]' : 'text-[2.5rem] sm:text-6xl')}>{title}</h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">{lead}</p>
+            {actions && <div className="mt-8 flex flex-wrap gap-3">{actions}</div>}
+          </div>
+          {art && <div className="relative min-w-0">{art}</div>}
         </div>
         {children}
       </Container>
@@ -111,10 +119,10 @@ export function Faq({ items, schema = true }: { items: { q: string; a: string }[
 export function CtaBand({
   title = (
     <>
-      See your own exam marked — <em className="font-serif font-normal text-aqua italic">free</em>
+      See your own exam marked, <em className="font-serif font-normal text-aqua italic">free</em>
     </>
   ),
-  lead = 'Start a free pilot with one course. Send us a question, your rubric and a few anonymous answers — we’ll show you the suggested marks, side by side with your teachers’.',
+  lead = 'Start a free pilot with one course. Send us a question, your rubric and a few anonymous answers. We’ll show you the suggested marks, side by side with your teachers’.',
 }: {
   title?: ReactNode;
   lead?: ReactNode;
@@ -124,7 +132,8 @@ export function CtaBand({
       <Container>
         <div className="relative overflow-hidden rounded-[28px] bg-navy px-6 py-14 text-center sm:px-12 sm:py-18">
           <div className="bg-dots pointer-events-none absolute inset-0 opacity-50" aria-hidden />
-          <div className="animate-gradient pointer-events-none absolute -inset-x-20 -top-40 h-80 bg-[linear-gradient(110deg,#0164f3,#15d9fc,#0135aa,#0164f3)] bg-[length:300%_300%] opacity-40 blur-3xl" aria-hidden />
+          <Aurora dark className="opacity-80" />
+          <Confetti />
           <div className="relative mx-auto max-w-2xl">
             <h2 className="text-[2rem] leading-tight font-bold text-white sm:text-5xl">{title}</h2>
             <p className="mt-5 text-lg leading-relaxed text-white/75">{lead}</p>

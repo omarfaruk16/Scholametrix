@@ -14,7 +14,7 @@ export function Footer() {
             <Link href="/" aria-label="Scholametrix home">
               <Logo tone="light" />
             </Link>
-            <p className="mt-5 leading-relaxed">{SITE.tagline} AI suggests marks against your rubric — your teachers approve every one.</p>
+            <p className="mt-5 leading-relaxed">{SITE.tagline} AI suggests marks against your rubric. Your teachers approve every one.</p>
             <ul className="mt-6 space-y-3 text-[15px]">
               <li>
                 <a href={`mailto:${SITE.email}`} className="inline-flex items-center gap-2.5 hover:text-white">

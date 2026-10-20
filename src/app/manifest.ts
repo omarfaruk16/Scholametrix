@@ -4,7 +4,7 @@ export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Scholametrix — AI Evaluation for Written Exams',
+    name: 'Scholametrix: AI Evaluation for Written Exams',
     short_name: 'Scholametrix',
     description: 'Fair, fast AI marking for written exams. Teachers approve every mark.',
     start_url: '/',

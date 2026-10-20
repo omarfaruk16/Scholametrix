@@ -1,4 +1,6 @@
 import { ArrowRight, Ban, Check, CircleAlert, Copy, FileText, Gauge, Highlighter, Languages, Layers3, ListChecks, MessageSquareText, Scale, Sparkles, ThumbsDown, ThumbsUp } from 'lucide-react';
+import { Sparkles as ISparkles, ListChecks as IListChecks, Layers3 as ILayers3, Highlighter as IHighlighter, MessageSquareText as IMessageSquareText, Languages as ILanguages, UserCheck as IUserCheck } from 'lucide-react';
+import { OrbitArt, DevicesArt, FlowArt, ReceiptArt, ChecklistArt } from '@/components/art';
 import { CtaBand, Faq, Feature } from '@/components/blocks';
 import { PageHero } from '@/components/blocks';
 import { IntegrationFlow } from '@/components/IntegrationFlow';
@@ -10,7 +12,7 @@ import demo from '@/content/demo-marking.json';
 import { pageMeta, productLd } from '@/lib/seo';
 
 export const metadata = pageMeta({
-  title: 'AI Evaluation — Rubric-Based Marking for Written Answers',
+  title: 'AI Evaluation: Rubric-Based Marking for Written Answers',
   description:
     'Scholametrix AI Evaluation marks written and essay answers against your rubric: marks per criterion, highlighted evidence, strengths, gaps and a clear reason. English & Bangla. Teachers approve every mark.',
   path: '/ai-evaluation',
@@ -20,7 +22,7 @@ const ANATOMY = [
   { icon: <Layers3 />, title: 'Marks per criterion', body: 'Each rubric criterion gets its own mark and a one-line reason, rounded to your mark step.' },
   { icon: <Highlighter />, title: 'Highlighted evidence', body: 'The phrases that earned marks are highlighted on the answer itself, linked to their criterion.' },
   { icon: <MessageSquareText />, title: 'Why this mark', body: 'A short summary of what the answer did well and what it missed, written for a teacher to check.' },
-  { icon: <ThumbsUp />, title: 'Strengths', body: 'What the student understood — useful feedback when results are released.' },
+  { icon: <ThumbsUp />, title: 'Strengths', body: 'What the student understood. Useful feedback when results are released.' },
   { icon: <ThumbsDown />, title: 'Weaknesses', body: 'Misconceptions or vague points that cost marks.' },
   { icon: <CircleAlert />, title: 'Missing points', body: 'Rubric points the answer never reached, so teachers can see the gap at a glance.' },
 ];
@@ -28,11 +30,11 @@ const ANATOMY = [
 const FAQ = [
   {
     q: 'What kinds of questions can Scholametrix mark?',
-    a: 'Short answers, structured answers and essays — any written answer that can be marked against criteria. MCQs don’t need AI: the e-Exam platform marks them instantly.',
+    a: 'Short answers, structured answers and essays: any written answer that can be marked against criteria. MCQs don’t need AI: the e-Exam platform marks them instantly.',
   },
   {
     q: 'Do we have to write rubrics?',
-    a: 'A rubric is what makes marking fair, so yes — but you don’t have to start from a blank page. Paste the model answer and Scholametrix drafts a rubric whose marks add up and whose criteria all trace back to the model answer. Teachers edit and approve it.',
+    a: 'A rubric is what makes marking fair, so yes, but you don’t have to start from a blank page. Paste the model answer and Scholametrix drafts a rubric whose marks add up and whose criteria all trace back to the model answer. Teachers edit and approve it.',
   },
   {
     q: 'Will two identical answers get the same mark?',
@@ -40,7 +42,7 @@ const FAQ = [
   },
   {
     q: 'What happens with blank or off-topic answers?',
-    a: 'Blank answers get zero immediately without calling the AI. Off-topic or pleading answers (“please give me marks”) get the marks the rubric allows — usually none — with a reason the teacher can see.',
+    a: 'Blank answers get zero immediately without calling the AI. Off-topic or pleading answers (“please give me marks”) get the marks the rubric allows (usually none) with a reason the teacher can see.',
   },
 ];
 
@@ -56,8 +58,9 @@ export default function AiEvaluationPage() {
             AI marking that <Accent>shows its work</Accent>
           </>
         }
-        lead="Marks for every rubric criterion, the evidence highlighted on the answer, and a clear reason — reviewed and approved by your teachers. Connect it to your existing system or use it inside our e-Exam platform."
+        lead="Marks for every rubric criterion, the evidence highlighted on the answer, and a clear reason, reviewed and approved by your teachers. Connect it to your existing system or use it inside our e-Exam platform."
         crumbs={[{ name: 'AI Evaluation', path: '/ai-evaluation' }]}
+        art={<OrbitArt center={<ISparkles />} items={[{ icon: <IListChecks />, label: 'Rubric' }, { icon: <ILayers3 />, label: 'Marks' }, { icon: <IHighlighter />, label: 'Evidence' }, { icon: <IMessageSquareText />, label: 'Reason' }, { icon: <ILanguages />, label: 'বাংলা' }, { icon: <IUserCheck />, label: 'Approve' }]} />}
         actions={
           <>
             <ButtonLink href="/pilot" size="lg">
@@ -185,19 +188,19 @@ export default function AiEvaluationPage() {
           <Heading id="design-title" eyebrow="Consistent by design" title="Built to mark the way a careful examiner would" />
           <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             <Feature icon={<Scale />} title="Same rules for every student">
-              The same rubric, prompt, model and settings for every answer to a question — no tired evenings.
+              The same rubric, prompt, model and settings for every answer to a question. No tired evenings.
             </Feature>
             <Feature icon={<FileText />} title="Totals that always add up">
               Marks are recomputed on our servers: clamped to each criterion’s maximum and rounded to your mark step.
             </Feature>
             <Feature icon={<Languages />} title="English & Bangla">
-              Highlights are located in the original text — Bangla script, English, mixed answers and formulas.
+              Highlights are located in the original text: Bangla script, English, mixed answers and formulas.
             </Feature>
             <Feature icon={<Gauge />} title="Fast at any scale">
               A real-time lane for classes and a steady queue for exams with thousands of scripts.
             </Feature>
             <Feature icon={<Copy />} title="Duplicates marked once">
-              Identical answers reuse the first result — consistent, and never charged twice.
+              Identical answers reuse the first result. Consistent, and never charged twice.
             </Feature>
             <Feature icon={<Ban />} title="Blank answers skipped">
               Empty answers get zero instantly, without an AI call.

@@ -41,7 +41,7 @@ const FORMS: Record<Kind, { fields: FieldDef[]; submit: string; done: { title: s
       },
     ],
     submit: 'Request my free pilot',
-    done: { title: 'Thank you — your pilot request is in.', body: 'We’ll contact you within one or two working days to plan the pilot with you.' },
+    done: { title: 'Thank you, your pilot request is in.', body: 'We’ll contact you within one or two working days to plan the pilot with you.' },
   },
   demo: {
     fields: [
@@ -55,7 +55,7 @@ const FORMS: Record<Kind, { fields: FieldDef[]; submit: string; done: { title: s
       { name: 'message', label: 'What would you like to see?', required: true, type: 'textarea', wide: true, placeholder: 'Your exams, your current system, and anything you’d like us to show in the demo.' },
     ],
     submit: 'Book my demo',
-    done: { title: 'Thank you — we’ll be in touch.', body: 'We’ll email you within one working day to find a time for a live demo.' },
+    done: { title: 'Thank you, we’ll be in touch.', body: 'We’ll email you within one working day to find a time for a live demo.' },
   },
   partner: {
     fields: [

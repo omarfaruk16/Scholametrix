@@ -9,7 +9,7 @@ import { cn } from './ui';
 
 // The AI's real suggestion for a Bangla answer gave full marks for "required materials" although
 // chlorophyll is missing (it said so in its own notes). This is exactly what teacher review is for.
-const ADJUST = { id: 'b2', to: 1.5, note: 'ক্লোরোফিলের উল্লেখ নেই — Chlorophyll is not mentioned.' };
+const ADJUST = { id: 'b2', to: 1.5, note: 'ক্লোরোফিলের উল্লেখ নেই (Chlorophyll is not mentioned).' };
 
 export function ReviewDemo() {
   const m = demo.bn;
@@ -96,7 +96,7 @@ export function ReviewDemo() {
         <div className="mt-5 flex items-center justify-between rounded-xl bg-ink px-4 py-3 text-white">
           <span className="flex items-center gap-2 text-[13px] font-medium text-white/80">
             {reviewed ? <Check className="size-4 text-aqua" /> : <Sparkles className="size-4 text-aqua" />}
-            {reviewed ? 'Final mark, approved by the teacher' : 'Suggested by AI — not yet released'}
+            {reviewed ? 'Final mark, approved by the teacher' : 'Suggested by AI, not yet released'}
           </span>
           <span className="shrink-0 font-display text-2xl font-extrabold whitespace-nowrap tabular-nums">
             {total}

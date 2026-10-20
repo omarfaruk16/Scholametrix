@@ -11,7 +11,7 @@ export function Container({ className, children }: { className?: string; childre
 
 export function Section({ id, className, children, labelledBy }: { id?: string; className?: string; children: ReactNode; labelledBy?: string }) {
   return (
-    <section id={id} aria-labelledby={labelledBy} className={cn('py-18 sm:py-24 lg:py-28', className)}>
+    <section id={id} aria-labelledby={labelledBy} className={cn('relative py-18 sm:py-24 lg:py-28', className)}>
       {children}
     </section>
   );

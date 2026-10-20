@@ -25,7 +25,7 @@ const STEP_MS = 750;
 
 /**
  * The hero: a real answer marked by the Scholametrix AI (output captured from the live service),
- * replayed step by step — highlights, criterion marks, total, then the teacher's approval.
+ * replayed step by step: highlights, criterion marks, total, then the teacher's approval.
  */
 export function MarkingDemo() {
   const m = demo.en;
