@@ -32,11 +32,13 @@ pnpm images         # rebuild public/images from Resources/ (logo, founders, scr
 
 ## Deploy (same VPS as api.scholametrix.tech)
 
-1. Point `scholametrix.tech` and `www` at the server (Cloudflare: proxied, SSL mode *Full (strict)*).
-2. On the server: `certbot certonly --nginx -d scholametrix.tech -d www.scholametrix.tech`.
-3. Copy `deploy/nginx.conf` to `/etc/nginx/sites-available/scholametrix.tech`, enable it,
-   `nginx -t && systemctl reload nginx`.
-4. Build locally and upload: `pnpm build && rsync -az --delete out/ root@<server>:/var/www/scholametrix/out/`.
+Main address: **https://www.scholametrix.tech** (the bare domain redirects to it).
 
-The AI service must allow the website's origin: `LEADS_ALLOWED_ORIGINS` (default already includes
-`https://scholametrix.tech` and `https://www.scholametrix.tech`).
+1. DNS on Cloudflare: `scholametrix.tech` and `www` proxied to the server. SSL mode *Full (strict)*.
+2. Certificate (once): follow the comment at the top of `deploy/nginx.conf`.
+3. Install `deploy/nginx.conf` as `/etc/nginx/sites-available/scholametrix.tech`, symlink it into
+   `sites-enabled`, then `nginx -t && systemctl reload nginx`.
+4. Every release: `pnpm build && rsync -az --delete out/ root@62.72.13.213:/var/www/scholametrix/out/`.
+
+The AI service must allow the website's origin: `LEADS_ALLOWED_ORIGINS` (its default already includes
+`https://www.scholametrix.tech` and `https://scholametrix.tech`).
