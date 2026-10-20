@@ -6,3 +6,6 @@ next-env.d.ts
 .DS_Store
 .env*.local
 .claude/
+Resources/Cirtificate keys/
+*.key
+*.pem
